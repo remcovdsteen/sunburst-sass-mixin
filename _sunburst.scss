@@ -1,16 +1,12 @@
 @mixin sunburst($color1, $color2, $bursts) {
-  
   $stops: ();
-  $boolean: false;
 
   @for $i from 0 through $bursts {
     $color: $color1;
-    @if ($boolean) {
-      $boolean: false;
+    @if ($i%2 == 1) {
       $color: $color2;
-    } @else {
-      $boolean: true;
     }
+
     $deg: ((($bursts - $i)/$bursts)*180deg)-90;
     $new-stops: linear-gradient($deg, transparent 50%, $color 50%, $color);
     $stops: join($stops, $new-stops, comma);
@@ -30,5 +26,4 @@
     left: 50%;
     transform: rotate(180deg);
   }
-
 }
