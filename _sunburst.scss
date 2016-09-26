@@ -8,7 +8,7 @@
     }
 
     $deg: ((($bursts - $i)/$bursts)*180deg)-90;
-    $new-stops: linear-gradient($deg, transparent 50%, $color 50%, $color);
+    $new-stops: linear-gradient($deg, transparent 49.9%, $color 50%, $color);
     $stops: join($stops, $new-stops, comma);
   }
 
